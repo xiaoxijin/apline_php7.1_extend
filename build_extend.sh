@@ -16,6 +16,14 @@ php7.1-pecl \
 #&& sed -i "s/union {void (*sa_handler)(int)/__sighandler_t sa_handler/g" /usr/include/signal.h \
 #&& sed -i "s/ -n / /" `which pecl` \
 pecl install swoole \
+&& pecl install yaf \
+&& pecl install yaconf \
+&& pecl install channel://pecl.php.net/yac-2.0.1 \
+&& pecl install redis \
+&& pecl install xdebug \
+&& pecl install ds \
+&& pecl install inotify \
+&& pecl install msgpack \
 && apk del \
 zlib-dev \
 libaio-dev \
