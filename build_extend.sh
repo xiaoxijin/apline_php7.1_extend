@@ -6,7 +6,7 @@ apk update && apk upgrade \
 && apk add autoconf build-base linux-headers \
 libaio-dev \
 zlib-dev \
-pcre \
+pcre-dev \
 php7.1-dev \
 php7.1-pecl \
 && ln -s /usr/bin/php-config7.1 /usr/bin/php-config \
@@ -21,7 +21,7 @@ zlib-dev \
 libaio-dev \
 php7.1-dev \
 php7.1-pecl \
-pcre \
+pcre-dev \
 autoconf build-base linux-headers \
 && rm -rf /var/cache/apk && mkdir /var/cache/apk/ && rm -rf /tmp/*
 
