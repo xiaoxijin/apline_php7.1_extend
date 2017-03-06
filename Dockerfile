@@ -2,20 +2,19 @@ FROM registry.cn-shenzhen.aliyuncs.com/xiaoxijin/php7.1:latest
 
 Maintainer Xijin Xiao (http://github.com/xiaoxijin/)
 
-RUN apk update
-RUN apk upgrade
-RUN apk add git
-RUN apk add autoconf
-RUN apk add build-base
-RUN apk add linux-headers
-RUN apk add libaio-dev
-RUN apk add php7.1-dev
+###########################
+#RUN echo "http://nl.alpinelinux.org/alpine/latest-stable/main" > /etc/apk/repositories
+#RUN echo "http://nl.alpinelinux.org/alpine/edge/testing/" >> /etc/apk/repositories
+#RUN echo "nameserver 8.8.8.8" >> /etc/resolv.conf && apk update && apk upgrade
+#RUN apk add php7
+#RUN apk add php7-opcache
+#RUN ln -fs /usr/bin/php7 /usr/bin/php
 
-
-RUN ln -fs /usr/bin/php-config7.1 /usr/bin/php-config \
-&& ln -fs /usr/bin/phpize7.1 /usr/bin/phpize
-
-
+########################### build swoole.so and copy to /root/
 ADD build_extend.sh /root/
 
 RUN sh /root/build_extend.sh
+
+ADD php.ini /etc/php7/
+
+RUN php -m
