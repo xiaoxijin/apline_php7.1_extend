@@ -15,6 +15,6 @@ ADD build_extend.sh /root/
 
 RUN sh /root/build_extend.sh
 
-ADD php.ini /etc/php7/
+ADD php.ini /etc/php7.1/
 
 RUN php -m
