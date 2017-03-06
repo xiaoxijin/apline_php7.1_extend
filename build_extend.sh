@@ -7,18 +7,19 @@ apk update && apk upgrade \
 libaio-dev \
 zlib-dev \
 php7.1-dev \
-php7.1-pear \
+php7.1-pecl \
 && ln -s /usr/bin/php-config7.1 /usr/bin/php-config \
 && ln -s /usr/bin/phpize7.1 /usr/bin/phpize \
-&& sed -i "s/struct sigaction {/#ifndef __sighandler_t \ntypedef void (*__sighandler_t)(int);\n#endif\nstruct sigaction\n{/g" /usr/include/signal.h \
-&& sed -i "s/union {void (*sa_handler)(int)/__sighandler_t sa_handler/g" /usr/include/signal.h \
-&& sed -i "s/ -n / /" `which pecl` \
-&& pecl install swoole \
+&& ln -s /usr/bin/pecl7.1 /usr/bin/pecl \
+#sed -i "s/struct sigaction {/#ifndef __sighandler_t \ntypedef void (*__sighandler_t)(int);\n#endif\nstruct sigaction\n{/g" /usr/include/signal.h \
+#&& sed -i "s/union {void (*sa_handler)(int)/__sighandler_t sa_handler/g" /usr/include/signal.h \
+#&& sed -i "s/ -n / /" `which pecl` \
+pecl install swoole \
 && apk del \
 zlib-dev \
 libaio-dev \
 php7.1-dev \
-php7.1-pear \
+php7.1-pecl \
 autoconf build-base linux-headers \
 && rm -rf /var/cache/apk && mkdir /var/cache/apk/ && rm -rf /tmp/*
 
