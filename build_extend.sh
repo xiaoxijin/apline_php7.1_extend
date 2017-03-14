@@ -9,7 +9,14 @@ zlib-dev \
 pcre-dev \
 php7.1-dev \
 php7.1-pecl \
-&& ln -s /usr/bin/php-config7.1 /usr/bin/php-config \
+php7.1-session\
+php7.1-json\
+php7.1-msgpack\
+php7.1-iconv\
+php7.1-mysqli\
+php7.1-posix\
+
+ln -s /usr/bin/php-config7.1 /usr/bin/php-config \
 && ln -s /usr/bin/phpize7.1 /usr/bin/phpize \
 && ln -s /usr/bin/pecl7.1 /usr/bin/pecl \
 #sed -i "s/struct sigaction {/#ifndef __sighandler_t \ntypedef void (*__sighandler_t)(int);\n#endif\nstruct sigaction\n{/g" /usr/include/signal.h \
@@ -23,7 +30,6 @@ pecl install swoole \
 && pecl install xdebug \
 && pecl install ds \
 && pecl install inotify \
-&& pecl install msgpack \
 && apk del \
 zlib-dev \
 libaio-dev \
