@@ -3,12 +3,20 @@
 #echo "nameserver 8.8.8.8" >> /etc/resolv.conf 
 
 apk update && apk upgrade \
-&& apk add autoconf build-base linux-headers \
+
+
+apk add autoconf build-base linux-headers \
 libaio-dev \
 zlib-dev \
 pcre-dev \
 php7.1-dev \
 php7.1-pecl
+
+apk add php7.1-session\
+php7.1-json\
+php7.1-posix\
+php7.1-mysqli\
+php7.1-iconv
 
 ln -s /usr/bin/php-config7.1 /usr/bin/php-config \
 && ln -s /usr/bin/phpize7.1 /usr/bin/phpize \
