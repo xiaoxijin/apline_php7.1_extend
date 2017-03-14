@@ -9,12 +9,6 @@ zlib-dev \
 pcre-dev \
 php7.1-dev \
 php7.1-pecl
-apk add php7.1-session\
-php7.1-json\
-php7.1-msgpack\
-php7.1-iconv\
-php7.1-mysqli\
-php7.1-posix\
 
 ln -s /usr/bin/php-config7.1 /usr/bin/php-config \
 && ln -s /usr/bin/phpize7.1 /usr/bin/phpize \
@@ -30,6 +24,12 @@ pecl install swoole \
 && pecl install xdebug \
 && pecl install ds \
 && pecl install inotify \
+&& pecl install session \
+&& pecl install json \
+&& pecl install msgpack \
+&& pecl install iconv \
+&& pecl install mysqli \
+&& pecl install posix \
 && apk del \
 zlib-dev \
 libaio-dev \
