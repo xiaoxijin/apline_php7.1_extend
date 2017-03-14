@@ -2,16 +2,22 @@
 #echo "http://nl.alpinelinux.org/alpine/edge/testing/" >> /etc/apk/repositories
 #echo "nameserver 8.8.8.8" >> /etc/resolv.conf 
 
-apk update && apk upgrade \
+apk update && apk upgrade
+
+apk add php7.1-opcache \
+php7.1-session \
+php7.1-json \
+php7.1-iconv \
+php7.1-mysqli \
+php7.1-posix
+
 
 apk add autoconf build-base linux-headers \
 libaio-dev \
 zlib-dev \
 pcre-dev \
 php7.1-dev \
-php7.1-pecl \
-
-apk add php7.1-session php7.1-json php7.1-iconv php7.1-mysqli php7.1-posix
+php7.1-pecl
 
 
 ln -s /usr/bin/php-config7.1 /usr/bin/php-config \
@@ -21,22 +27,19 @@ ln -s /usr/bin/php-config7.1 /usr/bin/php-config \
 #&& sed -i "s/union {void (*sa_handler)(int)/__sighandler_t sa_handler/g" /usr/include/signal.h \
 #&& sed -i "s/ -n / /" `which pecl` \
 pecl install swoole \
-&& pecl install yaf \
 && pecl install yaconf \
 && pecl install channel://pecl.php.net/yac-2.0.1 \
-&& pecl install redis \
 && pecl install xdebug \
 && pecl install ds \
 && pecl install inotify \
 && pecl install msgpack \
-&& apk del \
-zlib-dev \
+&& pecl install yaf \
+&& pecl install redis
+
+apk del autoconf build-base linux-headers \
 libaio-dev \
+zlib-dev \
+pcre-dev \
 php7.1-dev \
 php7.1-pecl \
-pcre-dev \
-autoconf build-base linux-headers \
 && rm -rf /var/cache/apk && mkdir /var/cache/apk/ && rm -rf /tmp/*
-
-## && cp /usr/lib/php7/modules/swoole.so /root/swoole.so \
-## mv /root/swoole.so /usr/lib/php7/modules/swoole.so
