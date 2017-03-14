@@ -32,12 +32,6 @@ pecl install swoole \
 && pecl install xdebug \
 && pecl install ds \
 && pecl install inotify \
-&& pecl install session \
-&& pecl install json \
-&& pecl install msgpack \
-&& pecl install iconv \
-&& pecl install mysqli \
-&& pecl install posix \
 && apk del \
 zlib-dev \
 libaio-dev \
