@@ -7,7 +7,5 @@ ADD build_extend.sh /root/
 
 RUN sh /root/build_extend.sh
 
-ADD php.ini /etc/php7/
-
 ADD ext/* /etc/php7/conf.d/
 
