@@ -4,25 +4,26 @@
 
 apk update && apk upgrade
 
-apk add php7.1-opcache \
-php7.1-session \
-php7.1-json \
-php7.1-iconv \
-php7.1-mysqli \
-php7.1-posix
+apk add php7-opcache \
+php7-session \
+php7-json \
+php7-iconv \
+php7-phar \
+php7-mysqli \
+php7-posix
 
 
 apk add autoconf build-base linux-headers \
 libaio-dev \
 zlib-dev \
 pcre-dev \
-php7.1-dev \
-php7.1-pecl
+php7-dev \
+php7-pecl
 
 
-ln -s /usr/bin/php-config7.1 /usr/bin/php-config \
-&& ln -s /usr/bin/phpize7.1 /usr/bin/phpize \
-&& ln -s /usr/bin/pecl7.1 /usr/bin/pecl \
+ln -s /usr/bin/php-config7 /usr/bin/php-config \
+&& ln -s /usr/bin/phpize7 /usr/bin/phpize \
+&& ln -s /usr/bin/pecl7 /usr/bin/pecl \
 #sed -i "s/struct sigaction {/#ifndef __sighandler_t \ntypedef void (*__sighandler_t)(int);\n#endif\nstruct sigaction\n{/g" /usr/include/signal.h \
 #&& sed -i "s/union {void (*sa_handler)(int)/__sighandler_t sa_handler/g" /usr/include/signal.h \
 #&& sed -i "s/ -n / /" `which pecl` \
@@ -40,6 +41,6 @@ apk del autoconf build-base linux-headers \
 libaio-dev \
 zlib-dev \
 pcre-dev \
-php7.1-dev \
-php7.1-pecl \
+php7-dev \
+php7-pecl \
 && rm -rf /var/cache/apk && mkdir /var/cache/apk/ && rm -rf /tmp/*
