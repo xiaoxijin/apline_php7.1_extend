@@ -11,8 +11,8 @@ php7-json \
 php7-iconv \
 php7-phar \
 php7-mysqli \
-php7-posix
-
+php7-posix \
+php7-ctype
 
 apk add autoconf build-base linux-headers \
 libaio-dev \
