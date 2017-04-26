@@ -5,6 +5,13 @@
 
 apk update && apk upgrade
 
+apk add autoconf build-base linux-headers \
+libaio-dev \
+zlib-dev \
+pcre-dev \
+php7-dev \
+php7-pecl
+
 apk add php7-openssl \
 php7-opcache \
 php7-session \
@@ -15,12 +22,7 @@ php7-mysqli \
 php7-posix \
 php7-ctype
 
-#apk add autoconf build-base linux-headers \
-#libaio-dev \
-#zlib-dev \
-#pcre-dev \
-#php7-dev \
-#php7-pecl
+
 
 #
 #ln -s /usr/bin/php-config7 /usr/bin/php-config \
