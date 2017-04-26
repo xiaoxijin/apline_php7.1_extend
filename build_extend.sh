@@ -5,9 +5,9 @@
 
 apk update && apk upgrade
 
-apk add php7-opcache \
+apk add php7-openssl \
+php7-opcache \
 php7-session \
-php7-openssl \
 php7-json \
 php7-iconv \
 php7-phar \
