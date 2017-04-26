@@ -17,10 +17,10 @@ php7-session \
 php7-json \
 php7-iconv \
 php7-phar \
-php7-openssl \
-php7-mysqli \
-php7-posix \
-php7-ctype
+php7-openssl
+#php7-mysqli \
+#php7-posix \
+#php7-ctype
 
 
 
