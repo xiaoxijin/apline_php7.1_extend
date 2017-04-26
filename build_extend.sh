@@ -5,22 +5,22 @@
 
 apk update && apk upgrade
 
-apk add autoconf build-base linux-headers \
-libaio-dev \
-zlib-dev \
-pcre-dev \
-php7-dev \
-php7-pecl
+#apk add autoconf build-base linux-headers \
+#libaio-dev \
+#zlib-dev \
+#pcre-dev \
+#php7-dev \
+#php7-pecl
 
-apk add php7-openssl \
-php7-opcache \
-php7-session \
-php7-json \
-php7-iconv \
-php7-phar \
-php7-mysqli \
-php7-posix \
-php7-ctype
+#apk add php7-openssl \
+#php7-opcache \
+#php7-session \
+#php7-json \
+#php7-iconv \
+#php7-phar \
+#php7-mysqli \
+#php7-posix \
+#php7-ctype
 
 
 
